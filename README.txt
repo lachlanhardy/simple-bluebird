@@ -1,0 +1,1 @@
+Creating a simple theme for Bluebird - http://bluebirdapp.com/
