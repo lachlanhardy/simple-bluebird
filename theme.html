@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='en' xml:lang='en'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta http-equiv='Content-Lanquge' content='en-us' />
+<link href='style.css' rel='stylesheet' type='text/css' />
+<title>Torn Paper</title>
+</head>
+<body>
+<div id='page'>
+{% for tweet in tweets %}
+<div class='tweet {%if tweet.isOwn %}TweetSelf{%else%}{%if tweet.type == BBReply%}TweetResponse{%/if%}{% if tweet.type == BBDirectMessage %}DM{%/if%}{%/if%}'>
+	<div class='avatar'><a href='{{tweet.userURL}}'><img src='{{tweet.author.imageURL}}' alt='{{tweet.author.fullName}}' title='{{tweet.author.fullName}}' /></a></div>
+	<div class='content'>
+		 <div class="realName"><a href='{{tweet.userURL}}'>{{tweet.author.fullName}}</a><span class="temps"><a href="http://twitter.com/{{tweet.author.username}}/status/{{tweet.tweetID}}">{{tweet.date | date_format: "h:mm a" }}</a></span></div> 
+		{{tweet.content}}
+	</div>
+ </div>
+
+<div class='clear'></div>
+
+{% /for %}
+</div>
+<div id='shadow'></div>
+</body>
+</html>
