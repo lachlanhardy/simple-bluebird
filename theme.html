@@ -9,19 +9,26 @@
 </head>
 <body>
 <div id='page'>
-{% for tweet in tweets %}
-<div class='tweet {%if tweet.isOwn %}TweetSelf{%else%}{%if tweet.type == BBReply%}TweetResponse{%/if%}{% if tweet.type == BBDirectMessage %}DM{%/if%}{%/if%}'>
-	<div class='avatar'><a href='{{tweet.userURL}}'><img src='{{tweet.author.imageURL}}' alt='{{tweet.author.fullName}}' title='{{tweet.author.fullName}}' /></a></div>
-	<div class='content'>
-		 <div class="realName"><a href='{{tweet.userURL}}'>{{tweet.author.fullName}}</a><span class="temps"><a href="http://twitter.com/{{tweet.author.username}}/status/{{tweet.tweetID}}">{{tweet.date | date_format: "h:mm a" }}</a></span></div> 
-		{{tweet.content}}
-	</div>
- </div>
+  {% for tweet in tweets %}
+    <div class='tweet {%if tweet.isOwn %}me{%else%}{%if tweet.type == BBReply%}reply{%/if%}{% if tweet.type == BBDirectMessage %}dm{%/if%}{%/if%}'>
+      
+      <a class='avatar' href='{{tweet.userURL}}'>
+        <img alt='{{tweet.author.fullName}}' height="72" src='{{tweet.author.imageURL}}' title='{{tweet.author.fullName}}' width="72" />
+        </a>
+      <a class="time" href="http://twitter.com/{{tweet.author.username}}/status/{{tweet.tweetID}}">
+        {{tweet.date | date_format: "H:mm" }}
+      </a>
+      <div class="realname">
+        <a href='{{tweet.userURL}}'>{{tweet.author.fullName}}</a>
+      </div> 
+      <div class='content'>
+        {{tweet.content}}
+      </div>
+    </div>
 
-<div class='clear'></div>
+    <div class='clear'></div>
 
-{% /for %}
+  {% /for %}
 </div>
-<div id='shadow'></div>
 </body>
 </html>

@@ -1,99 +1,89 @@
-body {
-	margin: 0;
-	padding: 0;
-	color: #555;
-	font: 11px/16px "Lucida Grande", Sans-Serif;
-	background: #0e0e0e;
-	text-shadow: 0px 1px 0px white;
-}
+body {background: #0e0e0e; color: #fff; font: 1em/1.5 "Helvetica Neue", sans-serif; margin: 0; padding: 0;}
 
-a:link, a:visited {
-	color: #555;
-	font-weight: bold;
-	text-decoration: none;
-}
+img {border: none;}
 
-a:hover {
-	font-weight: bold;
-	text-decoration: underline;
-}
+a:link {background: #fefefe; font-weight: 700; text-decoration: none;}
+a:visited {color: #555;}
+a:hover,
+a:active,
+a:focus {text-decoration: none;}
 
-.tweet {background: #efefef; min-height: 72px; margin: 0 0 1em 0; padding: 1em;}
 
+#page {padding: 1em;}
+.tweet {margin: 0 0 2em 0; padding: 0 0 0 80px; position: relative;}
+
+    .tweet .avatar {-webkit-box-shadow: rgba(230, 230, 230, 0.3) 0.1em 0.2em 0.5em; display: block; left: 0; position: absolute; top: 0; height: 72px; width: 72px;}
+    
+    .tweet .time {display: block; font: 0.9em/1 "Georgia", serif; left: 0; position: absolute; text-align: center; top: 80px; width: 72px;}
+        .tweet a.time:link {background: #0e0e0e; color: #fff;} 
+
+    .tweet .realname {background: #999; border: 1px solid #000; border-bottom: none; -webkit-border-top-right-radius: 10px; color: #fff; font-size: 0.9em; padding: 0 1em;}
+    .reply .realname {background: #ff0080;}
+    .me .realname {background: #ff8000;}
+    .dm .realname {background: #4000ff;}
+    
+        .tweet .realname a:link {background: transparent; color: #000;}
+    
+    .tweet .content {background: #fff; border: 1px solid #000; -webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px; -webkit-box-shadow: rgba(230, 230, 230, 0.3) 0.2em 0.3em 0.5em; color: #000; min-height: 65px; padding: 0.5em 1em; overflow: hidden; text-shadow: 0px 1px 0px #eee;}
+    
+/*
 .realName {
-	display: block;
-	font-size: 11px;
-	letter-spacing: 1px;
-	font-family: "Helvetica Neue";
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
 }
 
 .Tweet .realName { color: #666; }
 .Tweet .realName a {
-	color: #555;
+    color: #555;
 }
 
 .TweetSelf .realName { color: #85b343; }
 .TweetSelf .realName a {
-	color: #85b343;
+    color: #85b343;
 }
 
 .TweetResponse .realName { color: #d8bd21; }
 .TweetResponse .realName a {
-	color: #caab00;
+    color: #caab00;
 }
 
 .temps {
-	font-size: 9px;
-	letter-spacing: 0px;
-	float: right;
-	
+    font-size: 9px;
+    letter-spacing: 0px;
+    float: right;
+    
 }
 
 .TweetSelf {
-	margin: 0px;
-	padding: 25px 10px 5px 10px;
-	min-height: 48px;
+    margin: 0px;
+    padding: 25px 10px 5px 10px;
+    min-height: 48px;
 }
 
 .TweetSelf .avatar {
-	width: 32px;
-	height: 32px;
-	margin-right: 7px;
-	float: left;
+    width: 32px;
+    height: 32px;
+    margin-right: 7px;
+    float: left;
 }
 
 .TweetResponse {
-	margin: 0px;
-	padding: 25px 10px 5px 10px;
-	min-height: 48px;
+    margin: 0px;
+    padding: 25px 10px 5px 10px;
+    min-height: 48px;
 }
 
 .DM {
-	padding: 25px 10px 5px 10px;
-	min-height: 48px;
-}
-
-.avatar {
-	width: 64px;
-	height: 64px;
-	margin-right: 8px;
-	float: left;
-}
-
-.avatar img {
-	width: 32px;
-	border-style: none;
-}
-
-.clear {
-	clear: both;
-}
-
-.content {
-	overflow: hidden;
-	text-shadow: 0px 1px 0px #eee;
+    padding: 25px 10px 5px 10px;
+    min-height: 48px;
 }
 
 .bold {
-	font-weight: bold;
+    font-weight: bold;
 }
+
+.clear {
+    clear: both;
+}
+*/
